@@ -40,15 +40,9 @@ public class Explorer {
 
     private static void initLF() {
         try {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            // If Nimbus is not available, you can set the GUI to another look
-            // and feel.
+            UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
+        } catch (Exception ex) {
+            System.err.println("Failed to initialize LaF");
         }
     }
 
